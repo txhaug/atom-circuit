@@ -1,0 +1,73 @@
+input
+    {//This describes a bit longer chain as in the inputfileTest example.
+    N = 80 //Number of sites ring or two ends of Y-junction
+    Npart =80//Number of particles
+    Npartdown=80 //number of spin down particles for spinful fermions only
+
+    t1 = 1.0 //Nearest neighbor coupling
+    t2 = 0 //Not used
+    phi=0 //Flux in ring, goes from 0 to 1, 0.5 corresponds to destructive interference in fermions
+    U = 5 //On-site Interaction between atoms in system without leads
+    Uleads=5 //On-site Interaction between atoms in leads
+    V = 0 //Nearest-neighbor Interaction between atoms 
+    Vleads=0 //Nearest-neighbor Interaction between atoms in leads
+	Vcoupling=1000 //Nearest-neighbor Interaction between atoms at the site of coupling of junction, leave at 1000 to have same value of interaction as defined in V
+    Pleads=0 //Local Potential in leads
+    K=1.0 //Coupling strength in junction
+	K2=1000 //Coupling strength in junction along second leg, leave at 1000 to choose same value as K
+	K3=0 //Coupling strength at junction in a triangular fashion
+    leads=80 //Length of leads
+
+    potential=0.3 //potential offset with gaussian distribution to create small excitation
+	potential2=0 //leave at 0
+	dnpotentialmod=1 //multiplier for potential offset for second species if exists
+    sigmapotential=2 //Width of Gaussian potential offset
+	centerpos=0 //position of Gaussian potential offset, relative to the center of the leads
+	
+	impurity=0. //Add impurity potential in upper center of ring
+	impurity2=0. //Add impurity potential in lower center of ring
+
+	
+	
+	mpstype=7 //0: bose-hubbard 4 particles, 1: bose-hubbard hard-core (1 boson per site), 2: spinless fermion, 3: spinful fermions 4: bose-hubbard 3 particles, 5: bose-hubbard (5 bosons per site), 6: NA 7: bose-hubbard variable particle number, set below
+	//only used for mpstype=7
+	minnp=0 //minimal number of bosons per site
+	rangenp=1 //range of number bosons allowed per site, so maximal number of bosons per site is minnp+rangenp
+	
+
+    model=2 //model to simulate, 0: lead+ring, 1: Y junction, 2: Chain
+
+
+    inittype=2   //Initialization of system, 0: full dmrg,1: initialize atoms on leads only, DMRG on lead hamiltonian only, for quench dynamics, 2: perform full dmrg with Gaussian offset on lead
+    
+	//Parameters for DMRG
+    nsweeps = 7  // NUmber of DMRG sweeps 
+    sweeps
+        {
+        maxm  minm  cutoff  niter  noise
+        50    10    1E-12   30      1E-7
+		70    10    1E-12   30      1E-7
+        100   20    1E-12   30      1E-8
+		150   20    1E-12   20      1E-8
+        200   20    1E-12   20      1E-10
+        400   20    1E-12   20      0
+        600   20    1E-12   5      0
+        }
+
+    quiet = yes //How much print to command line
+    nstates=1 //How many states should be calculated via DMRG: 0: none, 1: GS, 2: GS+first exc.
+
+    initialbondcompression=100 //Compress to what bond dimension before beginning time evolution, the larger the more accurate, but also slower
+    ttotal=50.0 // How long time evolution
+    tau=0.01 // time step of evolution
+    expectSnaps=10 // measure expectation values after how many time steps
+    timecutoff=1E-9 //truncation error cutoff in time evolution, meaning at what accuracy MPS is truncated
+    timemaxm=100 //maximal bond dimension
+    timemethod=3 //which method to use for time evolution, //0: exact apply, 1: fit apply, 2: two step method exactapply, 3: two step method fitapply //2,3: Combine two timesteps for tau^3 accuracy as described in arXiv 1407.1832
+	
+	//Parameters for loading previous runs
+	loadtime=0 //Specify time when loaded state terminated
+    loadfile=0  //Optional: Specify file to load
+	stepsave=1
+
+    }
