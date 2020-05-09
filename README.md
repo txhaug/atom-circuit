@@ -13,15 +13,16 @@ Then, it calculates the dynamics. The potential is quenched at t=0 and the resul
 
 The output .dat file is given automatically a name to identify it with the inputfile settings.
 The output is as follows:
-Line1: time where snapshots where taken. In each line of length numberSnaps
-Line2: current bond dimension
-Line3: computational time
-Line4: current 1 measured
-Line5: current 2 measured
-Line6: current 3 measured
-Line7: Overlap with initial state
-Line8: Not used
-Line9 to Number of sites +9: density for each site
+Line 1: time where snapshots where taken. In each line of length numberSnaps
+Line 2: current bond dimension
+Line 3: computational time
+Line 4: current 1 measured
+Line 5: current 2 measured
+Line 6: current 3 measured
+Line 7: Overlap with initial state
+Line 8: Not used
+Line 9 to line "number of sites +9": density for each site
+Line "number of sites +9" to line "2*number of sites +9": density square for each site
 
 
 
