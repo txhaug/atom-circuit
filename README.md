@@ -1,6 +1,6 @@
 Atom-circuit: Solver for ground state and dynamics of circuits made of atoms. Can solve ring-lead systems, Y-junctions and linear chains. Supports both bosons and fermions. Solver is based on iTensor (https://itensor.org/ version 2.1.1) with DMRG and TEBD in C++. It models atomic (and possibly also other condensed matter systems) as a collection of coupled quasi one-dimensional chains.
 
-This tool has been used to reveal Andreev reflections in Y-junctions with bosonic atoms, as well as the absence of the Aharonov-Bohm effect in bosonic rings. Further reference here https://iopscience.iop.org/article/10.1088/2058-9565/ab2e61/meta or here https://arxiv.org/abs/1807.03616
+This tool has been used to reveal Andreev reflections in Y-junctions with bosonic atoms, as well as the absence of the Aharonov-Bohm effect in bosonic rings. Further reference here https://iopscience.iop.org/article/10.1088/2058-9565/ab2e61 or here https://arxiv.org/abs/1807.03616
 
 How to use:
 Install iTensor v.2.1.1 (Caution: Does not work with iTensor v3). Then, copy the files as is with the folder structure into the iTensor folder. 
@@ -24,7 +24,7 @@ Line 8: Not used
 Line 9 to line "number of sites +9": density for each site
 Line "number of sites +9" to line "2*number of sites +9": density square for each site
 
-
+To evaluate data, a basic readout script (evaluate.py) in python is provided. In the script, set the outputfile as well as basic information about the simulated system.
 
 When using this code, make sure to cite the itensor library as well as the author of this code:
 
