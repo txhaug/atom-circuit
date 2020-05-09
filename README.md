@@ -24,7 +24,7 @@ Line 8: Not used
 Line 9 to line "number of sites +9": density for each site
 Line "number of sites +9" to line "2*number of sites +9": density square for each site
 
-To evaluate data, a basic readout script (evaluate.py) in python is provided. In the script, set the outputfile as well as basic information about the simulated system.
+To evaluate data, a basic readout script (evaluate.py) in python is provided. In the script, set the outputfile as well as basic information about the simulated system. Tryout with the two basic test cases, inputfileTest and inputfileYjunctionTest. Run those two inputfiles and evalute them in the python file, instructions are inside the file.
 
 When using this code, make sure to cite the itensor library as well as the author of this code:
 
