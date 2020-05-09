@@ -8,10 +8,17 @@
 
 
 /*
+Atom circuit: Solver for quantum dynamics in ring-lead and Y-junctions with DMRG and TEBD. Based on the iTensor library.
+Author: Tobias Haug, tobias.haug@u.nus.edu, Github https://github.com/txhaug/atom-circuit
+Originally created in 2018, released in 2020
+*/
+
+/*
 Code to simulate quench dynamics in Ring-lead and Y-junctions. Supports bosons and fermions.
 First, it calculates ground state via DMRG. You can add a density perturbation in the source of the leads using the potential variable.
 Then, it calculates the dynamics. The potential is quenched at t=0 and the resulting dynamics is simulated. The density and current in time is outputed to file.
-of output txt: 
+The output .dat file is given automatically a name to identify it with the inputfile settings.
+The output is as follows:
 Line1: time where snapshots where taken. In each line of length numberSnaps
 Line2: current bond dimension
 Line3: computational time
