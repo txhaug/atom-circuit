@@ -1,4 +1,4 @@
-Solver for ground state and dynamics of circuits made of atoms. Can solve ring-lead systems, Y-junctions and linear chains. Supports both bosons and fermions. Solver is based on iTensor (https://itensor.org/ version 2.1.1) with DMRG and TEBD in C++. 
+Atom-circuit: Solver for ground state and dynamics of circuits made of atoms. Can solve ring-lead systems, Y-junctions and linear chains. Supports both bosons and fermions. Solver is based on iTensor (https://itensor.org/ version 2.1.1) with DMRG and TEBD in C++. It models atomic (and possibly also other condensed matter systems) as a collection of coupled quasi one-dimensional chains.
 This tool has been used to reveal Andreev reflections in Y-junctions with bosonic atoms, as well as the absence of the Aharonov-Bohm effect in bosonic rings. Further reference here https://iopscience.iop.org/article/10.1088/2058-9565/ab2e61/meta or here https://arxiv.org/abs/1807.03616
 After installing iTensor v2.1.1, copy the files as is with the folder structure into the iTensor folder. 
 Go to the code folder, then run make. g++ compiler for C++ is recommended. Run the solver in the code folder as ./quenchdynamics inputfileTest, where inputfileTest can be replaced with any other inputfile available. Output is a .dat file, which includes information such as currents and density of the time evolution.
@@ -21,3 +21,6 @@ Line9 to Number of sites +9: density for each site
 
 
 Caution: Does not work with iTensor v3. 
+When using this code, make sure to cite the itensor library as well as the author of this code:
+
+Haug, T., Dumke, R., Kwek, L.-C. & Amico, L. Andreev-Reflection and Aharonov–Bohm dynamics in atomtronic circuits. Quantum Sci. Technol. 4, 045001 (2019).
