@@ -20,7 +20,10 @@ Line8: Not used
 Line9 to Number of sites +9: density for each site
 
 
-Caution: Does not work with iTensor v3. 
+
 When using this code, make sure to cite the itensor library as well as the author of this code:
 
 Haug, T., Dumke, R., Kwek, L.-C. & Amico, L. Andreev-Reflection and Aharonov–Bohm dynamics in atomtronic circuits. Quantum Sci. Technol. 4, 045001 (2019).
+
+
+Caution: Does not work with iTensor v3. 
